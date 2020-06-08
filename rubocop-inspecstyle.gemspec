@@ -2,7 +2,7 @@ require_relative 'lib/rubocop/inspecstyle/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rubocop-inspecstyle"
-  spec.version       = RuboCop::Inspecstyle::VERSION
+  spec.version       = RuboCop::InSpecStyle::VERSION
   spec.authors       = ["Nick Schwaderer"]
   spec.email         = ["nschwaderer@chef.io"]
 

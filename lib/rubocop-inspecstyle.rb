@@ -6,6 +6,6 @@ require_relative 'rubocop/inspecstyle'
 require_relative 'rubocop/inspecstyle/version'
 require_relative 'rubocop/inspecstyle/inject'
 
-RuboCop::Inspecstyle::Inject.defaults!
+RuboCop::InSpecStyle::Inject.defaults!
 
 require_relative 'rubocop/cop/inspecstyle_cops'

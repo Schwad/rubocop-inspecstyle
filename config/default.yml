@@ -1,6 +1,6 @@
 # Write it!
 
-Inspecstyle/FirstCop:
-  Description: 'TODO: Write a description of the cop.'
+InspecStyle/FirstCop:
+  Description: 'This first cop is a sandbox for exploring new InspecStyle cops.'
   Enabled: pending
   VersionAdded: '0.82'

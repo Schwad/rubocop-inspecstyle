@@ -1,7 +1,7 @@
 require "rubocop/inspecstyle/version"
 
 module RuboCop
-  module Inspecstyle
+  module InSpecStyle
     class Error < StandardError; end
     # Your code goes here...
     PROJECT_ROOT   = Pathname.new(__dir__).parent.parent.expand_path.freeze

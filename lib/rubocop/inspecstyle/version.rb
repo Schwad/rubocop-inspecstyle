@@ -1,5 +1,5 @@
 module RuboCop
-  module Inspecstyle
+  module InSpecStyle
     VERSION = "0.1.0"
   end
 end
