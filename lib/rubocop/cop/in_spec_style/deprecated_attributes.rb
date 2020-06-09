@@ -38,7 +38,7 @@ module RuboCop
       #   # good
       #   good_foo_method(args)
       #
-      class FirstCop < Cop
+      class DeprecatedAttributes < Cop
         # TODO: Implement the cop in here.
         #
         # In many cases, you can use a node matcher for matching node pattern.
@@ -55,13 +55,6 @@ module RuboCop
           return unless bad_method?(node)
 
           add_offense(node)
-        end
-
-        def autocorrect(node)
-          ->(corrector) do
-            corrector.insert_before(node.source_range, 'good_method')
-            corrector.remove(node.source_range)
-          end
         end
       end
     end
