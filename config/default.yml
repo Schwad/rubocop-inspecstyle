@@ -1,6 +1,6 @@
 InSpecStyle/DeprecatedAttributes:
-  Description: 'TODO: Write a description of the cop.'
-  Enabled: pending
+  Description: 'Attributes are deprecated in favor of inputs'
+  Enabled: true
   VersionAdded: '0.82'
 
 InspecStyle/FirstCop:

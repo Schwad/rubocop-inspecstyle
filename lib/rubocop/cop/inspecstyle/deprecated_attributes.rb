@@ -4,39 +4,15 @@
 module RuboCop
   module Cop
     module InSpecStyle
-      # TODO: Write cop description and example of bad / good code. For every
-      # `SupportedStyle` and unique configuration, there needs to be examples.
-      # Examples must have valid Ruby syntax. Do not use upticks.
       #
-      # @example EnforcedStyle: bar (default)
-      #   # Description of the `bar` style.
+      # @example DeprecatedAttributes: Do not use attributes
+      #   # Attributes have been deprecated for inputs
       #
       #   # bad
-      #   bad_bar_method
-      #
-      #   # bad
-      #   bad_bar_method(args)
+      #   attribute('my_element', value: 10)
       #
       #   # good
-      #   good_bar_method
-      #
-      #   # good
-      #   good_bar_method(args)
-      #
-      # @example EnforcedStyle: foo
-      #   # Description of the `foo` style.
-      #
-      #   # bad
-      #   bad_foo_method
-      #
-      #   # bad
-      #   bad_foo_method(args)
-      #
-      #   # good
-      #   good_foo_method
-      #
-      #   # good
-      #   good_foo_method(args)
+      #   input('my_element', value: 10)
       #
       class DeprecatedAttributes < Cop
         # TODO: Implement the cop in here.
