@@ -45,7 +45,7 @@ module RuboCop
         # See https://github.com/rubocop-hq/rubocop/blob/master/lib/rubocop/node_pattern.rb
         #
         # For example
-        MSG = 'Use `#good_method` instead of `#bad_method`.'
+        MSG = 'Use `#good_method` instead of `#bad_method`. %<example_insertion>'
 
         def_node_matcher :bad_method?, <<~PATTERN
           (send nil? :bad_method ...)
@@ -53,8 +53,8 @@ module RuboCop
 
         def on_send(node)
           return unless bad_method?(node)
-
-          add_offense(node)
+          message = format(MSG, example_insertion: node.first.source)
+          add_offense(node, message: message)
         end
 
         def autocorrect(node)

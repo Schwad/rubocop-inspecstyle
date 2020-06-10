@@ -14,6 +14,10 @@ These are generic personal notes for useful documentation, approaches, and devel
 
 - attribute autocorrect (audit-cookbook)
 
+- https://www.rubydoc.info/gems/rubocop-ast/RuboCop/AST/NodePattern
+
+- hack on these specs locally and docs to learn https://github.com/rubocop-hq/rubocop-ast
+
 <!-- (cookstyle)
 
 - part of inspec (& check)
@@ -23,4 +27,15 @@ These are generic personal notes for useful documentation, approaches, and devel
 ```
 ruby-parse -e '1'
 (int 1)
+```
+
+Processing via IRB for AST parsing:
+
+```ruby
+code = '!something.empty?'
+source = RuboCop::ProcessedSource.new(code, RUBY_VERSION.to_f)
+node = source.ast
+node.type
+node.children
+node.source
 ```

@@ -7,6 +7,7 @@ module RuboCop
       #
       # @example DeprecatedAttributes: Do not use attributes
       #   # Attributes have been deprecated for inputs
+      #   # https://github.com/inspec/inspec/issues/3802
       #
       #   # bad
       #   attribute('my_element', value: 10)
@@ -15,23 +16,33 @@ module RuboCop
       #   input('my_element', value: 10)
       #
       class DeprecatedAttributes < Cop
-        # TODO: Implement the cop in here.
-        #
-        # In many cases, you can use a node matcher for matching node pattern.
-        # See https://github.com/rubocop-hq/rubocop/blob/master/lib/rubocop/node_pattern.rb
-        #
-        # For example
-        MSG = 'Use `#good_method` instead of `#bad_method`.'
+        include RangeHelp
 
-        def_node_matcher :bad_method?, <<~PATTERN
-          (send nil? :bad_method ...)
+        MSG = 'Use `#input` instead of `#attribute`.'
+
+        def_node_matcher :attribute?, <<~PATTERN
+          (send nil? :attribute ...)
         PATTERN
 
         def on_send(node)
-          return unless bad_method?(node)
-
-          add_offense(node)
+          return unless attribute?(node)
+          add_offense(node, location: range(node))
         end
+
+        private
+
+        def range(node)
+          range_between(node.source_range.begin_pos,
+            node.source_range.begin_pos+9
+          )
+        end
+
+        # def autocorrect
+        #   ->(corrector) do
+        #     corrector.insert_before(node.source_range, 'input')
+        #     corrector.remove(node.source_range, 'attribute')
+        #   end
+        # end
       end
     end
   end
