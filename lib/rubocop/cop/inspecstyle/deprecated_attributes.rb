@@ -32,6 +32,7 @@ module RuboCop
         private
 
         def range(node)
+          # Only highlights the method 'attribute'
           range_between(node.source_range.begin_pos,
             node.source_range.begin_pos+9
           )

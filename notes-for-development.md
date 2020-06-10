@@ -1,6 +1,6 @@
 # Notes for Dev
 
-These are generic personal notes for useful documentation, approaches, and development strategies around constructing InSpecStyle
+These are generic personal notes for useful documentation, approaches, and development strategies around constructing InSpecStyle. It's a bit hacked together like I will do for personal notes, but keeping together before this goes live to help others who might want to hack on InSpecStyle for the first time
 
 - Toolsets for cop development: https://github.com/rubocop-hq/rubocop-ast/blob/master/docs/modules/ROOT/pages/node_pattern.adoc
 
